@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--解决th报错 -->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h1 th:text="${msg}"></h1>
+<div style="border: solid 1px">
+    <!--<form enctype="multipart/form-data" method="post" th:action= "@{/upload}">-->
+        图片上传<input type="file" name="file" class="img_url" multiple="multiple"
+            onchange="test.imgView(this)" single accept="image/*"/>
+
+      <!--  <input type="button" value="上传" class="upload"/> -->
+    <!--</form>-->
+</div>
+<img id="showView">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+    var test = {
+        imgView : function (fileDom) {
+            //判断是否支持FileReader
+            if (window.FileReader) {
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+            }
+            //获取文件
+            var file = fileDom.files[0];
+            var imageType = /^image\//;
+            //是否是图片
+            if (!imageType.test(file.type)) {
+                alert("请选择图片！");
+                return;
+            }
+            //读取完成
+            reader.onload = function(e) {
+                //获取图片dom
+                var img = document.getElementById("view");
+                //图片路径设置为读取的图片
+                img.src = e.target.result;
+                // alert("路径"+img.src);
+                $("#preview").css("width",350+'px');
+                $("#preview").css("height",250+'px');
+            };
+
+            var url = "/upload";
+            var formData = new FormData();
+            formData.append("file",file);
+            formData.append("filename",file.name);
+
+            $.ajax({
+                type:"post",
+                url : url,
+                contentType: false,    //这个一定要写
+                processData: false, //这个也一定要写，不然会报错
+                data:formData,
+                dataType:'text',    //返回类型，有json，text，HTML。这里并没有jsonp格式，所以别妄想能用jsonp做跨域了。
+                success:function(data){
+                    var jsonObj = $.parseJSON(data)
+                    alert("路径"+jsonObj.url);
+                    //获取图片dom
+                    var img = document.getElementById("showView");
+                    $("#showView").attr("src",jsonObj.url);
+
+                    //$("#academic_certificate").textbox("setValue",jsonObj.url);
+                    //$("#academic_certificate").val(jsonObj.url);
+                },
+            });
+
+        }
+    }
+
+</script>
+</body>
+</html>

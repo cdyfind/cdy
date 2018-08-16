@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body  onkeydown="enter()">
+<h2>简易聊天室!</h2>
+<div id="_window"></div>
+<input type="text" id="_text"/>
+<input type="button" id="_send" onclick="send()" value="发送"/>
+<hr/>
+<button onclick="closeWebSocket()">关闭WebSocket连接</button>
+<hr/>
+<h1 th:text="${cid}"></h1>
+<script src="/js/socket.js"></script>
+
+</body>
+</html>
