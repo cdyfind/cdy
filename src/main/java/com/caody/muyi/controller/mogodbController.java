@@ -28,6 +28,7 @@ public class mogodbController {
     @Autowired
     private MongoTemplate mongoTemplate;
 
+
     @RequestMapping(value = "/save")
     public void save(){
         User user = new User();
