@@ -63,6 +63,10 @@ public class TestController {
         modelMap.addAttribute("msg", "caody");
         return "index";
     }
+    @RequestMapping("/h")
+    public String h(){
+        return "h/index";
+    }
 
     @RequestMapping("/test")
     public String ueditor() {
