@@ -282,7 +282,144 @@ public class HController {
         return "h/empty_page";
     }
 
+    /**
+     * ui元素
+     */
+    @RequestMapping("/typography")
+    public String typography(){
+        return "h/typography";
+    }
 
+    @RequestMapping("/fontawesome")
+    public String fontawesome(){
+        return "h/fontawesome";
+    }
 
+    @RequestMapping("/glyphicons")
+    public String glyphicons(){
+        return "h/glyphicons";
+    }
 
+    @RequestMapping("/iconfont")
+    public String iconfont(){
+        return "h/iconfont";
+    }
+
+    @RequestMapping("/draggable_panels")
+    public String draggable_panels(){
+        return "h/draggable_panels";
+    }
+
+    @RequestMapping("/agile_board")
+    public String agile_board(){
+        return "h/agile_board";
+    }
+
+    @RequestMapping("/buttons")
+    public String buttons(){
+        return "h/buttons";
+    }
+
+    @RequestMapping("/tabs_panels")
+    public String tabs_panels(){
+        return "h/tabs_panels";
+    }
+
+    @RequestMapping("/notifications")
+    public String notifications(){
+        return "h/notifications";
+    }
+
+    @RequestMapping("/badges_labels")
+    public String badges_labels(){
+        return "h/badges_labels";
+    }
+
+    @RequestMapping("/grid_options")
+    public String grid_options(){
+        return "h/grid_options";
+    }
+
+    @RequestMapping("/plyr")
+    public String plyr(){
+        return "h/plyr";
+    }
+
+    @RequestMapping("/layer")
+    public String layer(){
+        return "h/layer";
+    }
+
+    @RequestMapping("/modal_window")
+    public String modal_window(){
+        return "h/modal_window";
+    }
+
+    @RequestMapping("/sweetalert")
+    public String sweetalert(){
+        return "h/sweetalert";
+    }
+
+    @RequestMapping("/jstree")
+    public String jstree(){
+        return "h/jstree";
+    }
+
+    @RequestMapping("/tree_view")
+    public String tree_view(){
+        return "h/tree_view";
+    }
+
+    @RequestMapping("/nestable_list")
+    public String nestable_list(){
+        return "h/nestable_list";
+    }
+
+    @RequestMapping("/toastr_notifications")
+    public String toastr_notifications(){
+        return "h/toastr_notifications";
+    }
+
+    @RequestMapping("/diff")
+    public String diff(){
+        return "h/diff";
+    }
+
+    @RequestMapping("/spinners")
+    public String spinners(){
+        return "h/spinners";
+    }
+
+    @RequestMapping("/widgets")
+    public String widgets(){
+        return "h/widgets";
+    }
+
+    /**
+     * 表格
+     */
+    @RequestMapping("/table_basic")
+    public String table_basic(){
+        return "h/table_basic";
+    }
+
+    @RequestMapping("/table_data_tables")
+    public String table_data_tables(){
+        return "h/table_data_tables";
+    }
+
+    @RequestMapping("/table_jqgrid")
+    public String table_jqgrid(){
+        return "h/table_jqgrid";
+    }
+
+    @RequestMapping("/table_foo_table")
+    public String table_foo_table(){
+        return "h/table_foo_table";
+    }
+
+    @RequestMapping("/table_bootstrap")
+    public String table_bootstrap(){
+        return "h/table_bootstrap";
+    }
 }
